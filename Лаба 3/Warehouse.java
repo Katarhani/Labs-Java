@@ -1,4 +1,4 @@
-import java.util.LinkedList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 // Класс для продукта с названием, ценой и количеством
@@ -21,47 +21,23 @@ class Product {
     }
 }
 
-// Класс для хранения списка продуктов, чтобы управлять коллизиями
-class ProductNode {
-    String barcode;
-    Product product;
-
-    public ProductNode(String barcode, Product product) {
-        this.barcode = barcode;
-        this.product = product;
-    }
-}
-
 public class Warehouse {
-    // Используем LinkedList для хранения продуктов, чтобы управлять коллизиями
-    LinkedList<ProductNode> products = new LinkedList<>();
+    // HashMap для хранения продуктов
+    HashMap<String, Product> products = new HashMap<>();
 
     // Метод для добавления продукта
     public void addProduct(String barcode, String name, double price, int quantity) {
-        // Проверяем, существует ли продукт с таким штрихкодом
-        for (ProductNode node : products) {
-            if (node.barcode.equals(barcode)) {
-                System.out.println("Продукт с таким штрихкодом уже существует.");
-                return;
-            }
-        }
-        // Если продукта с таким штрихкодом нет, добавляем его
-        products.add(new ProductNode(barcode, new Product(name, price, quantity)));
+        products.put(barcode, new Product(name, price, quantity));
     }
 
     // Метод для поиска продукта
     public Product getProduct(String barcode) {
-        for (ProductNode node : products) {
-            if (node.barcode.equals(barcode)) {
-                return node.product;
-            }
-        }
-        return null; // Продукт не найден
+        return products.get(barcode);
     }
 
     // Метод для удаления продукта
     public void removeProduct(String barcode) {
-        products.removeIf(node -> node.barcode.equals(barcode));
+        products.remove(barcode);
     }
 
     // Метод для вывода всех продуктов
@@ -69,8 +45,8 @@ public class Warehouse {
         if (products.isEmpty()) {
             System.out.println("Склад пуст.");
         } else {
-            for (ProductNode node : products) {
-                System.out.println("Штрихкод: " + node.barcode + ", " + node.product);
+            for (String barcode : products.keySet()) {
+                System.out.println("Штрихкод: " + barcode + ", " + products.get(barcode));
             }
         }
     }
