@@ -3,18 +3,18 @@ import java.util.Scanner;
 
 // Класс для продукта с названием, ценой и количеством
 class Product {
-    String name;    // Название продукта
-    double price;   // Цена продукта
-    int quantity;   // Количество на складе
+    String name;    
+    double price;   
+    int quantity;   
 
-    // Конструктор
+    
     public Product(String name, double price, int quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
     }
 
-    // Переопределяем метод toString для удобного вывода
+    
     @Override
     public String toString() {
         return name + " (Цена: " + price + ", Количество: " + quantity + ")";
@@ -55,10 +55,10 @@ public class Warehouse {
         Warehouse warehouse = new Warehouse();
         Scanner scanner = new Scanner(System.in);
 
-        // Добавление предустановленных продуктов
-        warehouse.addProduct("123", "Яблоко", 0.50, 100);
-        warehouse.addProduct("456", "Банан", 0.30, 150);
-        warehouse.addProduct("789", "Апельсин", 0.60, 80);
+    
+        warehouse.addProduct("123", "Молоко", 0.50, 100);
+        warehouse.addProduct("456", "Шоколад", 0.30, 150);
+        warehouse.addProduct("789", "Вино", 0.60, 80);
 
         // Поиск продукта
         System.out.println("Введите штрихкод для поиска продукта:");
