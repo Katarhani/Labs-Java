@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 
 public class HashTable<K, V> {
-    private static class Entry<K, V> {
+    private static class Entry<K, V> { //дженерик
         private K key;
         private V value;
 
