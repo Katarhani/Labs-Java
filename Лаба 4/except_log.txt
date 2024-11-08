@@ -1,1 +1,3 @@
 Stack is empty. Method pop()
+Stack is empty. Method pop()
+Stack is empty. Method pop()

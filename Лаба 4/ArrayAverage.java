@@ -4,7 +4,7 @@ public class ArrayAverage {
         int sum = 0;
 
         try {
-            for (int index = 0; index < arr.length; ++index) {
+            for (int index = 0; index <= arr.length; ++index) {
                 sum += arr[index];
             }
             sum = sum/arr.length;
