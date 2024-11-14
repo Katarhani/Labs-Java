@@ -2,21 +2,21 @@ import java.util.regex.*;
 
 public class Password {
     public static void main(String[] args) {
-        String password = "iQwerty1";
+        String password = "jgnvdlnH_1";
 
         try {
             Matcher matcher = Pattern.compile(".{8,16}").matcher(password);
-            boolean inRange = matcher.find();
+            boolean Size = matcher.find();
             matcher = Pattern.compile("[A-Z]{1,}").matcher(password);
-            boolean upSim = matcher.find();
+            boolean Big = matcher.find();
             matcher = Pattern.compile("[a-z]{1,}").matcher(password);
-            boolean lowSim = matcher.find();
+            boolean Small = matcher.find();
             matcher = Pattern.compile("[0-9]{1,}").matcher(password);
-            boolean numMatch = matcher.find();
+            boolean Numbers = matcher.find();
             matcher = Pattern.compile("_?").matcher(password);
-            boolean specSim = matcher.find();
+            boolean Underline = matcher.find();
 
-            if (inRange && upSim && lowSim && numMatch && specSim)
+            if (Size && Big && Small && Numbers && Underline)
                 System.out.println("Valid password");
             else
                 System.out.println("Invalid password");

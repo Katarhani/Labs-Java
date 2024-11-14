@@ -2,7 +2,7 @@ import java.util.regex.*;
 
 public class NumberFinder {
     public static void main(String[] args) {
-        String text = "The price 4of the pro09duct is $19.99";
+        String text = "Olivia paints landsc04apes in bright colors and sells them for 25.33";
 
         try {
             Pattern pattern = Pattern.compile("\\d+");

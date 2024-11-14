@@ -3,9 +3,9 @@ import java.util.regex.*;
 public class FindWords {
     public static void main(String[] args) {
         try {
-            String text = "Emma E.A. watched THE sunseT fade into the horizon";
+            String text = "Michael plays soccer every Saturday";
 
-            char begin = 'E';
+            char begin = 'M';
             String regex = String.format("(?i)\\b%c[a-z]+", begin);
 
             Pattern pattern = Pattern.compile(regex);

@@ -3,7 +3,7 @@ import java.util.regex.*;
 public class IP {
     public static void main(String[] args) {
         try {
-            String ip = "192.168.43.0";
+            String ip = "255.198.52.22";
             
             Matcher matcher = Pattern.compile("^([0-1]?[0-9]?[0-9]|[2]?[0-5]?[0-5])[.]" +
                                               "([0-1]?[0-9]?[0-9]|[2]?[0-5]?[0-5])[.]" +
