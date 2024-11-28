@@ -3,7 +3,7 @@ import java.util.regex.*;
 public class FindWords {
     public static void main(String[] args) {
         try {
-            String text = "Michael plays soccer every Saturday";
+            String text = "Michael M.N. plays soccer every Saturday";
 
             char begin = 'M';
             String regex = String.format("(?i)\\b%c[a-z]+", begin);

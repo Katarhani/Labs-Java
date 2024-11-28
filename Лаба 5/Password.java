@@ -2,21 +2,19 @@ import java.util.regex.*;
 
 public class Password {
     public static void main(String[] args) {
-        String password = "jgnvdlnH_1";
+        String password = "jgnvdlnJc1gL0";
 
         try {
-            Matcher matcher = Pattern.compile(".{8,16}").matcher(password);
-            boolean Size = matcher.find();
+            Matcher matcher = Pattern.compile("\\w{8,16}").matcher(password);
+            boolean Size = matcher.matches();
             matcher = Pattern.compile("[A-Z]{1,}").matcher(password);
             boolean Big = matcher.find();
             matcher = Pattern.compile("[a-z]{1,}").matcher(password);
             boolean Small = matcher.find();
             matcher = Pattern.compile("[0-9]{1,}").matcher(password);
             boolean Numbers = matcher.find();
-            matcher = Pattern.compile("_?").matcher(password);
-            boolean Underline = matcher.find();
-
-            if (Size && Big && Small && Numbers && Underline)
+            
+            if (Size && Big && Small && Numbers)
                 System.out.println("Valid password");
             else
                 System.out.println("Invalid password");
