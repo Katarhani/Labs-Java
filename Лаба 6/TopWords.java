@@ -19,6 +19,7 @@ public class TopWords {
         
         while(scanner.hasNext()) {
             String word = scanner.next().replaceAll("(,|\\.|\\s)", "");
+            //проверяем, если ни разу не было +1, то лежит 0, т.е если слова не было = нул, а если попалось, то +1
             wordFrequency.put(word, (wordFrequency.get(word) == null ? 1 : wordFrequency.get(word) + 1));
         }
         

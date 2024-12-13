@@ -22,7 +22,8 @@ class SalesTracker {
     public SalesTracker() {
         this.sales = new HashMap<>();
     }
-
+    //функция добавления продаж
+    //конфеты, если есть параметры какие-то, то сначала будет по умолчанию нал. елси нал то добав 0 с помощью дефолта
     public void addSale(String item, int quantity) {
         sales.put(item, sales.getOrDefault(item, 0) + quantity);
     }
