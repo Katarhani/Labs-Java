@@ -20,7 +20,7 @@ public class WarehouseTransfer {
         // Создаём пул потоков с 3 грузчиками
         ExecutorService executor = Executors.newFixedThreadPool(3);
 
-        // Для каждого грузчика создаём CompletableFuture
+        // Для каждого грузчика создаём CompletableFuture - задача для каждого грузчика
         List<CompletableFuture<Void>> futures = new ArrayList<>();
 
         // Разбиваем список товаров на несколько частей для каждого грузчика

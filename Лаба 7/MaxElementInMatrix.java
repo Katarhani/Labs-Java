@@ -9,7 +9,7 @@ public class MaxElementInMatrix {
             {6, 2, 4}
         };
 
-        // Массив для хранения результатов от каждого потока
+        // Массив для хранения результатов от каждого потока самого большого числа и массив самих потоков
         int[] results = new int[matrix.length];
         Thread[] threads = new Thread[matrix.length];
 
