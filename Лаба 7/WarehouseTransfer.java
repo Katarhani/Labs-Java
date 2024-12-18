@@ -2,11 +2,12 @@ import java.util.*;
 import java.util.concurrent.*;
 
 /*
- * Вариант 5
+ * Вариант 5 Использование CompletableFuture - класс позволяет работать с асинхронными задачами. 
+ * Проще говоря, он помогает выполнять задачи в фоновом режиме и управлять их результатами
  */
 
 public class WarehouseTransfer {
-    private static final int MAX_WEIGHT = 150; // Максимальный вес для одной поездки
+    private static final int MAX_WEIGHT = 150; 
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         // Список товаров с их весами

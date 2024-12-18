@@ -9,8 +9,8 @@ public class SumArray {
             array[i] = 1;
         }
 
-        Thread thread1 = new Thread(new SumTask(0, MID));
-        Thread thread2 = new Thread(new SumTask(MID, array.length));
+        Thread thread1 = new Thread(new Sum(0, MID));
+        Thread thread2 = new Thread(new Sum(MID, array.length));
 
         thread1.start();
         thread2.start();
@@ -18,15 +18,15 @@ public class SumArray {
         thread1.join();
         thread2.join();
 
-        System.out.println("The sum of the array elements: " + SumTask.getResult());
+        System.out.println("The sum of the array elements: " + Sum.getResult());
     }
 
-    static class SumTask implements Runnable {
+    static class Sum implements Runnable {
         private final int start;
         private final int end;
         private static AtomicInteger result = new AtomicInteger(0);
 
-        public SumTask(int start, int end) {
+        public Sum(int start, int end) {
             this.start = start;
             this.end = end;
         }

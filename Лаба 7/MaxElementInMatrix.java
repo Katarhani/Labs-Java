@@ -13,7 +13,7 @@ public class MaxElementInMatrix {
         int[] results = new int[matrix.length];
         Thread[] threads = new Thread[matrix.length];
 
-        // Запуск потока для каждой строки
+        // Запуск потока для каждой строки, столько потоков, сколько кол-во срок матрицы
         for (int i = 0; i < matrix.length; i++) {
             final int row = i;
             threads[i] = new Thread(() -> {
@@ -22,7 +22,7 @@ public class MaxElementInMatrix {
                     if (matrix[row][j] > maxInRow) {
                         maxInRow = matrix[row][j];
                     }
-                }
+                }// каждого потока
                 results[row] = maxInRow;
             });
             threads[i].start();
